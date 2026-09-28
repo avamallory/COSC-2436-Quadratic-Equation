@@ -10,7 +10,8 @@ A short C++ program designed to calculate and display the roots of a quadratic e
 * Uses a `QuadraticEquation` class to manage coefficients and calculations
 * Conditional logic and error handling (preventing division by zero when $a = 0$ and handling non-numeric input)
 * Use of the standard math library (`<cmath>`) for mathematical operations
-
+* Uses a `QuadraticEquation` class with encapsulated data members
+* **Separate Interface and Implementation:** Class declarations are defined in a header file, with method implementations in a separate source file
 ## 📋 How to Run
 
 ### Requirements
