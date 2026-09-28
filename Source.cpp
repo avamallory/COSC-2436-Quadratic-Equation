@@ -13,6 +13,8 @@
 #include "QuadraticEquation.h"
 using namespace std;
 
+// Epsilon created for floating-point zero comparison
+const double EPS = 1e-9;
 
 int main() {
    
