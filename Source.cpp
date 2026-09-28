@@ -10,78 +10,9 @@
 #include <iostream>
 #include <cmath>
 #include <limits>
+#include "QuadraticEquation.h"
 using namespace std;
 
-// Epsilon created for floating-point zero comparison
-const double EPS = 1e-9;
-
-class QuadraticEquation {
-public:
-    double discriminant; // discriminant = b^2 - 4ac
-    double root1;        // first root (if real)
-    double root2;        // second root (if real)
-
-    // Constructor initializes coefficient values
-    QuadraticEquation(double a, double b, double c) {
-        this->a = a;
-        this->b = b;
-        this->c = c;
-    }
-
-    // Getters return coefficient values
-    double getA() const {
-        return a;
-    }
-    double getB() const {
-        return b;
-    }
-    double getC() const {
-        return c;
-    }
-
-    // Setters update coefficients
-    void setA(double a) {
-        this->a = a;
-    }
-    void setB(double b) {
-        this->b = b;
-    }
-    void setC(double c) {
-        this->c = c;
-    }
-
-
-    void compute() {
-
-
-        discriminant = (pow(b, 2) - 4 * a * c);
-
-        // Positive discriminant? 2 real roots.
-        if (discriminant > EPS) {
-            root1 = (-b + sqrt(discriminant)) / (2 * a);
-            root2 = (-b - sqrt(discriminant)) / (2 * a);
-            cout << "Positive discriminant has two roots x = "
-                << root1 << " and x = " << root2 << "." << endl;
-        }
-        // Is discriminant close to zero? 1 real root.
-        else if (fabs(discriminant) <= EPS) {
-            root1 = (-b / (2 * a));
-            cout << "Zero discriminant has 1 root x = "
-                << root1 << "." << endl;
-        }
-        // Negative discriminant? 0 real roots.
-        else {
-            cout << "Negative discriminant has no real roots (complex roots)." << endl;
-        }
-    }
-
-
-private:
-    // Coefficients of quadratic equation
-    double a;
-    double b;
-    double c;
-};
 
 int main() {
    
